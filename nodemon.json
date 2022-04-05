@@ -1,0 +1,7 @@
+{
+  "env": {
+    "FRONTEND_URL_DEV": "http://localhost:4200",
+    "IMAGE_STORE": "images",
+    "JWT_KEY": "my_u_library_test"
+  }
+}
