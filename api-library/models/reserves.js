@@ -10,7 +10,7 @@ const Reserve = sequelize.define('Reserves', {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  userid: {
+  userId: {
     type: DataTypes.INTEGER,
     allowNull: false
   },

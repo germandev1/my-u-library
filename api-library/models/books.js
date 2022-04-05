@@ -1,25 +1,29 @@
-import Sequelize from 'sequelize'
+import { DataTypes } from 'sequelize'
 import { sequelize } from '../database/database'
+import Reserve from './reserves'
 
 const Book = sequelize.define('Books', {
   id: {
-    type: Sequelize.INTEGER,
+    type: DataTypes.INTEGER,
     primaryKey: true
   },
   title: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   author: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   genre: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   copies: {
-    type: Sequelize.INTEGER
+    type: DataTypes.INTEGER
   },
 }, {
   timestamps: false
 })
+
+Book.hasMany(Reserve, { foreignKey: 'bookId', sourceKey: 'id' })
+Reserve.belongsTo(Book, { foreignKey: 'bookId', sourceKey: 'id' })
 
 export default Book
